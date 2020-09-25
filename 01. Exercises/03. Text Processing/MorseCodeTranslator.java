@@ -1,0 +1,52 @@
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class MorseCodeTranslator {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        Map<String, String> morseCode=new LinkedHashMap<>();
+        morseCode.put(".-","A");
+        morseCode.put("-...","B");
+        morseCode.put("-.-.","C");
+        morseCode.put("-..","D");
+        morseCode.put(".","E");
+        morseCode.put("..-.","F");
+        morseCode.put("--.","G");
+        morseCode.put("....","H");
+        morseCode.put("..","I");
+        morseCode.put(".---","J");
+        morseCode.put("-.-","K");
+        morseCode.put(".-..","L");
+        morseCode.put("--","M");
+        morseCode.put("-.","N");
+        morseCode.put("---","O");
+        morseCode.put(".--.","P");
+        morseCode.put("--.-","Q");
+        morseCode.put(".-.","R");
+        morseCode.put("...","S");
+        morseCode.put("-","T");
+        morseCode.put("..-","U");
+        morseCode.put("...-","V");
+        morseCode.put(".--","W");
+        morseCode.put("-..-","X");
+        morseCode.put("-.--","Y");
+        morseCode.put("--..","Z");
+
+
+        String line=scanner.nextLine();
+        String[] tokens=line.split(" ");
+        for (String token : tokens) {
+            if(token.equals("|")){
+                System.out.printf(" ");
+            }
+            for (Map.Entry<String, String> entry : morseCode.entrySet()) {
+                if(token.equals(entry.getKey())){
+                    System.out.printf("%s",entry.getValue());
+                }
+            }
+        }
+
+
+    }
+}
